@@ -1,0 +1,14 @@
+BOOTSTRAP
+https://getbootstrap.com/
+
+DATATABLES
+https://datatables.net/
+
+FONT AWESOME
+https://fontawesome.com/
+
+JQUERY
+https://jquery.com/
+
+MPDF
+https://mpdf.github.io/

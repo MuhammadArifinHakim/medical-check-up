@@ -1,0 +1,11 @@
+XAMMP
+https://www.apachefriends.org/index.html
+
+WAMP 
+https://www.wampserver.com/en/
+
+MAMP
+https://www.mamp.info/en/
+
+LAMP
+https://bitnami.com/stack/lamp/installer 

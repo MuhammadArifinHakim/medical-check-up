@@ -1,0 +1,64 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: #000066;
+  text-decoration: none;
+}
+table {
+  border: 1 solid black;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th {
+  font-weight: bold;
+  background: lightgray;
+}
+
+/* table.data_pasien tr:nth-child(even) {
+  background-color: whitesmoke;
+} */
+
+thead {
+  vertical-align: bottom;
+  text-align: center;
+  font-weight: bold;
+}
+
+tfoot {
+  text-align: center;
+  font-weight: bold;
+}
+
+th {
+  font-size: 16;
+  text-align: center;
+  padding-left: 0.35em;
+  padding-right: 0.35em;
+  padding-top: 0.35em;
+  padding-bottom: 0.35em;
+  vertical-align: middle;
+}
+
+td {
+  padding-left: 0.35em;
+  padding-right: 0.35em;
+  padding-top: 0.35em;
+  padding-bottom: 0.35em;
+  vertical-align: top;
+}
+
+img {
+  margin: 0.2em;
+  vertical-align: middle;
+}
