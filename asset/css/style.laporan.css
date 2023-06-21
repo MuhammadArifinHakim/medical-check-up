@@ -19,6 +19,9 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
+table.data_pasien{
+  border: none;
+}
 
 table th {
   font-weight: bold;

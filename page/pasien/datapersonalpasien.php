@@ -62,10 +62,9 @@ $data = viewData("SELECT * FROM tbl_pasien WHERE id = '$id'");
       </div>
     </div>
 
-    <!-- data medical check -->
-    <div class="card mt-4" style="width: 100%;">
+    <div class="card mt-4">
       <div class="card-header">
-        <h5>Data Medical Check</h5>
+        <h5>Riwayat Cek Pasien Terakhir</h5>
       </div>
       <div class="card-body">
         <!-- START: Button -->
@@ -106,11 +105,11 @@ $data = viewData("SELECT * FROM tbl_pasien WHERE id = '$id'");
                   <td><?= $no++; ?></td>
                   <!-- <td><?= $catatan['nama_pasien']; ?></td> -->
                   <td><?= date('d-m-Y', strtotime($catatan['tanggal_periksa'])); ?></td>
-                  <td><?= $catatan['tensi']; ?></td>
-                  <td><?= $catatan['tinggi']; ?> cm</td>
-                  <td><?= $catatan['berat']; ?> kg</td>
-                  <td><?= $catatan['gula_darah']; ?></td>
-                  <td><?= $catatan['gol_darah']; ?></td>
+                  <td><?= $catatan['tensi'] !== '' ? $catatan['tensi'] . ' mmHg' : '-'; ?></td>
+                  <td><?= $catatan['tinggi'] !== '0' ? $catatan['tinggi'] . ' cm' : '-'; ?></td>
+                  <td><?= $catatan['berat'] !== '0' ? $catatan['berat'] . ' kg' : '-'; ?></td>
+                  <td><?= $catatan['gula_darah'] !== '0' ? $catatan['gula_darah'] : '-'; ?></td>
+                  <td><?= $catatan['gol_darah'] !== '' ? $catatan['gol_darah'] . ' gol' : '-'; ?></td>
                   <td style="max-width: 110px; word-wrap: break-word;">
                     <?php
                     $keterangan = $catatan['keterangan'];
@@ -147,8 +146,6 @@ $data = viewData("SELECT * FROM tbl_pasien WHERE id = '$id'");
         </div>
       </div>
     </div>
-
+    <!-- /.row -->
   </div>
-  <!-- /.row -->
-</div>
 </div>

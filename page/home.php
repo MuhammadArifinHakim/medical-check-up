@@ -91,8 +91,8 @@ $query = "SELECT
 						<tr>
 							<th>No</th>
 							<th>Nama</th>
-							<th>Nomor</th>
 							<th>Tanggal Periksa</th>
+							<th>Nomor</th>
 							<th>No HP</th>
 							<th>Alamat</th>
 							<th>Keterangan</th>
@@ -106,9 +106,9 @@ $query = "SELECT
 						<?php foreach ($catatan as $data) : ?>
 							<tr>
 								<td><?= $no++; ?></td>
-								<td><?= $data['nama_pasien']; ?></td>
-								<td><?= $data['nomor']; ?></td>
+								<td style="max-width: 100px; word-wrap: break-word;"><?= $data['nama_pasien']; ?></td>
 								<td><?= date('d-m-Y', strtotime($data['tanggal_periksa'])); ?></td>
+								<td><?= $data['nomor']; ?></td>
 								<td><?= $data['no_hp']; ?></td>
 								<td style="max-width: 100px; word-wrap: break-word;">
 									<?php
