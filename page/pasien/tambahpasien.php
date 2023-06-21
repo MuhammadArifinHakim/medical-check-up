@@ -1,10 +1,9 @@
 <?php
 
-$nomor = 12;
-echo $nomor;
+
 // kode otomatis
 $nomor = autonomor('tbl_pasien');
-echo $nomor;
+// echo $nomor;
 
 if (isset($_POST['submit'])) {
 	$nama       			= addslashes($_POST['nama_pasien']);
