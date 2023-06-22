@@ -1,5 +1,5 @@
 <?php
-echo  $id;
+
 if (isset($_POST['submit'])) {
 	$password_lama    = mysqli_real_escape_string($koneksi, $_POST['password_lama']);
 	$password_baru    = mysqli_real_escape_string($koneksi, $_POST['password_baru']);

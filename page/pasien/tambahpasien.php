@@ -74,7 +74,8 @@ if (isset($_POST['submit'])) {
 				</div>
 				<div class="form-group">
 					<label for="no_hp">No Handphone</label>
-					<input type="number" min="0" maxlength="13" class="form-control" name="no_hp" id="no_hp" placeholder="No Handphone">
+					<input type="tel" minlength="10" maxlength="13" class="form-control" name="no_hp" id="no_hp" placeholder="No Handphone">
+					<span id="error-message" style="color: red;"></span>
 				</div>
 				<div class="form-group">
 					<label for="alamat">Alamat</label>
@@ -90,3 +91,22 @@ if (isset($_POST['submit'])) {
 
 </div>
 <!-- END: Content -->
+
+<script>
+	var input = document.getElementById("no_hp");
+	var errorMessage = document.getElementById("error-message");
+
+	input.addEventListener("input", function() {
+		var value = input.value.replace(/\D/g, ''); // Remove non-digit characters
+		if (value.length > 13) {
+			value = value.slice(0, 13); // Truncate the value to 13 digits if it exceeds the limit
+		}
+		input.value = value; // Update the input value
+
+		if (value.length < 10 || value.length > 13) {
+			errorMessage.textContent = "Please enter a valid phone number between 10 and 13 digits.";
+		} else {
+			errorMessage.textContent = "";
+		}
+	});
+</script>
