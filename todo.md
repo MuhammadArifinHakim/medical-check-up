@@ -44,4 +44,4 @@
 - [ ] fix any error
 - [ ] try in other device
 - [ ] make Code Documentation
-- [ ] make step by step installation web to client device in file README.md
+- [x] make step by step installation web to client device in file README.md
