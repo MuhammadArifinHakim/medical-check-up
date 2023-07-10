@@ -32,7 +32,7 @@
               <tr>
                 <td><?= $no++; ?></td>
                 <td><?= $data['nama_pasien']; ?></td>
-                <td><?= date('d-m-Y', strtotime($data['tanggal_lahir'])); ?></td>
+                <td><?= $data['tanggal_lahir'] !== '0000-00-00' ? date('d-m-Y', strtotime($data['tanggal_lahir'])) : '-'; ?></td>
                 <td><?= $data['usia']; ?></td>
                 <td><?= $data['gender']; ?></td>
                 <td><?= $data['no_hp']; ?></td>

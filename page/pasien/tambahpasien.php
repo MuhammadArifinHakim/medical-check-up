@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
 				</div>
 				<div class="form-group">
 					<label for="alamat">Alamat</label>
-					<textarea class="form-control" name="alamat" id="alamat" placeholder="Alamat" rows="3"></textarea>
+					<textarea class="form-control" name="alamat" id="alamat" placeholder="Alamat" rows="3" onKeyDown="preventNewLine(event)"></textarea>
 				</div>
 				<div class="card-footer text-center">
 					<button type="reset" class="btn btn-danger mr-2"><i class="fas fa-undo"></i> Reset</button>
@@ -109,4 +109,10 @@ if (isset($_POST['submit'])) {
 			errorMessage.textContent = "";
 		}
 	});
+
+	function preventNewLine(event) {
+		if (event.keyCode === 13) {
+			event.preventDefault();
+		}
+	}
 </script>
