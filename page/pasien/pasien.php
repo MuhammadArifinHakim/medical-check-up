@@ -27,7 +27,7 @@
           </thead>
           <tbody>
             <?php $no = 1; ?>
-            <?php $pasien = viewDatas("SELECT * FROM `tbl_pasien` ORDER BY nama_pasien ASC"); ?>
+            <?php $pasien = viewDatas("SELECT * FROM `tbl_pasien` ORDER BY id DESC"); ?>
             <?php foreach ($pasien as $data) : ?>
               <tr>
                 <td><?= $no++; ?></td>

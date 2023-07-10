@@ -46,7 +46,7 @@ $data = viewData("SELECT * FROM tbl_pasien WHERE id = '$id'");
           <hr>
 
           <strong><i class="far fa-calendar-alt mr-1"></i> Tanggal Lahir</strong>
-          <p class="text-muted"><?= date('d-m-y', strtotime($data['tanggal_lahir'])); ?></p>
+          <p class="text-muted"><?= $data['tanggal_lahir'] !== '0000-00-00' ? date('d-m-Y', strtotime($data['tanggal_lahir'])) : '-'; ?></p>
 
           <strong><i class="fas fa-map-marker-alt mr-1"></i> Alamat</strong>
           <p class="text-muted"><?= $data['alamat']; ?></p>
