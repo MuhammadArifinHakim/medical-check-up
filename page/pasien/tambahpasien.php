@@ -1,6 +1,4 @@
 <?php
-
-
 // kode otomatis
 $nomor = autonomor('tbl_pasien');
 // echo $nomor;
