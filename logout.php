@@ -4,9 +4,8 @@
   $_SESSION = [];
   session_unset();
   session_destroy();
-  setcookie('laundry', '', time() - 3600);
-  setcookie('ku', '', time() - 3600);
+  setcookie('cek', '', time() - 3600);
+  setcookie('medical', '', time() - 3600);
 
   header("Location: login.php");
   exit;
-?>

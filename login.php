@@ -3,11 +3,11 @@ session_start();
 require_once 'load/function.php';
 
 if (isset($_COOKIE['laundry']) && isset($_COOKIE['ku'])) {
-  $laundry = $_COOKIE['laundry'];     // id dari tbl_karyawan
-  $ku = $_COOKIE['ku'];               // username dari tbl_karyawan
+  $cek = $_COOKIE['cek'];     // id dari tbl_karyawan
+  $medical = $_COOKIE['medical'];               // username dari tbl_karyawan
 
   // Ambil username berdasarkan id
-  $result = mysqli_query($koneksi, "SELECT * FROM tbl_karyawan WHERE id = '$laundry'");
+  $result = mysqli_query($koneksi, "SELECT * FROM tbl_karyawan WHERE id = '$cek'");
   $data = mysqli_fetch_assoc($result);
 
   if ($ku ===  hash('sha256', $data['username'])) {
@@ -44,8 +44,8 @@ if (isset($_POST['login'])) {
 
       // Cek remember me
       if (isset($_POST['remember'])) {
-        setcookie('laundry', $row['id'], time() + (60 * 60 * 24 * 5));                       // id dari tbl_karyawan
-        setcookie('ku', hash('sha256', $row['username']), time() + (60 * 60 * 24 * 5));      // username dari tbl_karyawan
+        setcookie('cek', $row['id'], time() + (60 * 60 * 24 * 5));                       // id dari tbl_karyawan
+        setcookie('medical', hash('sha256', $row['username']), time() + (60 * 60 * 24 * 5));      // username dari tbl_karyawan
       }
 
       header("Location: index.php");
