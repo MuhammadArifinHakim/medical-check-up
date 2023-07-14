@@ -75,7 +75,7 @@ $html = '
 foreach ($pasien as $catatan) {
   $html .= '
           <tr>
-            <td>' . date('d-m-Y', strtotime($catatan['tanggal_periksa'])) . '</td>
+            <td style="text-align: center;">' . date('d-m-Y', strtotime($catatan['tanggal_periksa'])) . '</td>
             <td style="text-align: center;">' . ($catatan['tensi'] !== '' ? $catatan['tensi'] : '-') . '</td>
             <td style="text-align: center;">' . ($catatan['tinggi'] !== '0' ? $catatan['tinggi'] . ' cm' : '-') . '</td>
             <td style="text-align: center;">' . ($catatan['berat'] !== '0' ? $catatan['berat'] . ' kg' : '-') . '</td>
