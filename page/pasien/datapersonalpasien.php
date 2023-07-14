@@ -109,7 +109,7 @@ $data = viewData("SELECT * FROM tbl_pasien WHERE id = '$id'");
                   <td><?= $catatan['tinggi'] !== '0' ? $catatan['tinggi'] . ' cm' : '-'; ?></td>
                   <td><?= $catatan['berat'] !== '0' ? $catatan['berat'] . ' kg' : '-'; ?></td>
                   <td><?= $catatan['gula_darah'] !== '0' ? $catatan['gula_darah'] : '-'; ?></td>
-                  <td><?= $catatan['gol_darah'] !== '' ? $catatan['gol_darah'] . ' gol' : '-'; ?></td>
+                  <td><?= $catatan['gol_darah'] !== '' ? $catatan['gol_darah'] : '-'; ?></td>
                   <td style="max-width: 110px; word-wrap: break-word;">
                     <?php
                     $keterangan = $catatan['keterangan'];

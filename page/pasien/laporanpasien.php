@@ -21,31 +21,35 @@ $html = '
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="./../../asset/css/style.laporan.css" type="text/css">
-      <title>Laporan Data Pasien</title>
+      
+      <title>Laporan Data ' . $data['nama_pasien'] . '</title>
     </head>
 
     <body>
-      <h1>Catatan Medis</h1>
-      <p>dr. Brasmoto Adi P - dr.Yulia Arisna T</p>
+      <h2>Catatan Medis</h2>
+      <p style="text-align: left;">dr. Brasmoto Adi P - dr.Yulia Arisna T</p>
 
-      <br><br>
-
+      <br>
       <table class="data_pasien" style="width: 100%;">
       <tr>
-        <td style="width: 20%;"><strong>Nomor</strong></td>
-        <td style="width: 80%;"><strong>: </strong>' . $data['nomor'] . '</td>
+        <td style="width: 18%;"><strong>Laporan Tanggal</strong></td>
+        <td style="width: 82%;"><strong>: </strong>' . date('d-m-Y') . '</td>
       </tr>
       <tr>
-        <td style="width: 20%;"><strong>Nama Pasien</strong></td>
-        <td style="width: 80%;"><strong>: </strong>' . $data['nama_pasien'] . '</td>
+        <td style="width: 18%;"><strong>Nomor</strong></td>
+        <td style="width: 82%;"><strong>: </strong>' . $data['nomor'] . '</td>
       </tr>
       <tr>
-        <td style="width: 20%;"><strong>Usia</strong></td>
-        <td style="width: 80%;"><strong>: </strong>' . $data['usia'] . '</td>
+        <td style="width: 18%;"><strong>Nama Pasien</strong></td>
+        <td style="width: 82%;"><strong>: </strong>' . $data['nama_pasien'] . '</td>
       </tr>
       <tr>
-        <td style="width: 20%;"><strong>Alamat pasien</strong></td>
-        <td style="width: 80%;"><strong>: </strong>' . $data['alamat'] . '</td>
+        <td style="width: 18%;"><strong>Usia</strong></td>
+        <td style="width: 82%;"><strong>: </strong>' . $data['usia'] . '</td>
+      </tr>
+      <tr>
+        <td style="width: 18%;"><strong>Alamat pasien</strong></td>
+        <td style="width: 82%;"><strong>: </strong>' . $data['alamat'] . '</td>
       </tr>
       </table>
       
@@ -96,4 +100,4 @@ $mpdf = new \Mpdf\Mpdf(['orientation' => 'L']); // Set landscape orientation
 $date = date('d-M-Y');
 $mpdf->setFooter('{PAGENO}');
 $mpdf->WriteHTML($html);
-$mpdf->Output($date . '-Laporan-Data-Pasien.pdf', 'I');
+$mpdf->Output($data['nama_pasien'] . '-' . $date . '-Laporan.pdf', 'I');

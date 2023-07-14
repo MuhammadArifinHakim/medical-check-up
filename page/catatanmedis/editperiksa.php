@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
 				</div>
 				<div class="form-group">
 					<label for="tinggi">Tinggi Badan</label>
-					<input type="number" min="0" class="form-control" name="tinggi" id="tinggi" placeholder="Tinggi Badan" value="<?= $data['tinggi']; ?>" required>
+					<input type="text" class="form-control" name="tinggi" id="tinggi" placeholder="Tinggi Badan" value="<?= $data['tinggi']; ?>" required>
 				</div>
 				<div class="form-group">
 					<label for="berat">Berat Badan</label>
@@ -127,3 +127,23 @@ if (isset($_POST['submit'])) {
 
 </div>
 <!-- END: Content -->
+<script>
+	// Convert the input value to a valid number format
+	function formatNumber(value) {
+		// Replace comma (,) with dot (.) for decimal separator
+		value = value.replace(",", ".");
+
+		// Remove any non-digit characters except dot (.)
+		value = value.replace(/[^\d.]/g, "");
+
+		return value;
+	}
+
+	// Validate and format the input value when the form is submitted
+	document.querySelector("form").addEventListener("submit", function(event) {
+		var tinggiInput = document.getElementById("tinggi");
+		var tinggiValue = formatNumber(tinggiInput.value);
+
+		tinggiInput.value = tinggiValue;
+	});
+</script>
