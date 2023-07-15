@@ -81,15 +81,15 @@ if (isset($_POST['submit'])) {
 				</div>
 				<div class="form-group">
 					<label for="tensi">Tensi</label>
-					<input type="text" min="0" class="form-control" name="tensi" id="tensi" placeholder="Tekanan Tensi pasien" value="<?= $data['tensi']; ?>" required>
+					<input type="text" min="0" class="form-control" name="tensi" id="tensi" placeholder="Tekanan Tensi pasien" value="<?= $data['tensi']; ?>">
 				</div>
 				<div class="form-group">
 					<label for="tinggi">Tinggi Badan</label>
-					<input type="text" class="form-control" name="tinggi" id="tinggi" placeholder="Tinggi Badan" value="<?= $data['tinggi']; ?>" required>
+					<input type="text" class="form-control" name="tinggi" id="tinggi" placeholder="Tinggi Badan" value="<?= $data['tinggi']; ?>">
 				</div>
 				<div class="form-group">
 					<label for="berat">Berat Badan</label>
-					<input type="number" min="0" class="form-control" name="berat" id="berat" placeholder="Berat Badan" value="<?= $data['berat']; ?>" required>
+					<input type="number" min="0" class="form-control" name="berat" id="berat" placeholder="Berat Badan" value="<?= $data['berat']; ?>">
 				</div>
 				<div class="form-group">
 					<label for="gula_darah">Gula Darah</label>
