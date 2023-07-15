@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Jun 2023 pada 09.46
+-- Waktu pembuatan: 15 Jul 2023 pada 13.18
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -54,7 +54,7 @@ CREATE TABLE `tbl_medical_check` (
   `nama_pasien` varchar(100) NOT NULL,
   `tanggal_periksa` date NOT NULL,
   `tensi` varchar(8) NOT NULL,
-  `tinggi` int(3) NOT NULL,
+  `tinggi` float NOT NULL,
   `berat` int(3) NOT NULL,
   `gula_darah` int(3) NOT NULL,
   `gol_darah` enum('A','B','AB','O') NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE `tbl_medical_check` (
 --
 
 INSERT INTO `tbl_medical_check` (`id`, `nomor`, `nama_pasien`, `tanggal_periksa`, `tensi`, `tinggi`, `berat`, `gula_darah`, `gol_darah`, `keterangan`, `diagnosa`, `pengobatan`) VALUES
-(3, '0002237374139', 'Muhammad Arifin Hakim', '2023-06-22', '129', 194, 33, 0, 'O', 'th righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and eas', 'se who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy ', ' vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias except'),
+(3, '0002237374139', 'Muhammad Arifin Hakim', '2023-06-22', '129', 194.2, 33, 0, 'O', 'th righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and eas', 'se who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy ', ' vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias except'),
 (7, '0002237374139', 'Muhammad Arifin Hakim', '2023-04-04', '152', 174, 51, 0, 'O', 'dfsdfadasd\r\nasdasdS\r\nSdasd', 'asdasd\r\nasdasdadafa adfasfafaf aaf A \r\nASDFASDASDASDA', 'asdaw14 135r/a fuaehf2;9 wjsdf'),
 (10, '0002237374144', 'Ahmad Fauzi', '2023-06-15', '160', 160, 56, 0, 'A', 'sdgsd', 'asfasf', 'afaf'),
 (11, '0002237374145', 'Imam Barudak Santos', '2023-06-15', '112', 167, 53, 0, 'B', 'asf13 ', 'asd31 31d', '1f13f1'),
@@ -83,7 +83,11 @@ INSERT INTO `tbl_medical_check` (`id`, `nomor`, `nama_pasien`, `tanggal_periksa`
 (28, '0002237374144', 'Ahmad Fauzi', '2023-06-18', '99', 135, 55, 31, 'A', 'dddddddddddddd  ddddddddddddddddddddddd\r\nDDDDDDDDDDDDDDDDD\r\nDDDDDDDDDD\r\nDDDDDDDDD', 'DDDDDDDDD\r\nDDDDDDDDD ', 'dd  ddddddddddddddddddddddd\r\nDDDDDDDDDDDDDDDDD\r\nDDDDDDDDDD\r\nDDDDDDDDD'),
 (29, '0002237374147', 'Akmal Aan Faris', '2023-06-20', '123/90', 125, 54, 44, 'B', 'sdad', 'asd', 'asd'),
 (31, '0002237374148', 'Fajar Maulana S.KOM', '2023-06-19', '123/90', 177, 66, 67, 'B', 'asdasdap kali input gol darah, kalau dah pernah input aku mau ambil yg sudah ada dari database tapi ga bisa', 'ap kali input gol darah, kalau dah pernah input aku mau ambil yg sudah ada dari database tapi ga bisa', 'ap kali input gol darah, kalau dah pernah input aku mau ambil yg sudah ada dari database tapi ga bisa'),
-(32, '0002237374142', 'Deni Alfian Khaulany', '2023-06-21', '', 0, 0, 0, '', 'panas mengigigil', 'deman berdarah', 'makan obat');
+(32, '0002237374142', 'Deni Alfian Khaulany', '2023-06-21', '', 0, 0, 0, '', 'panas mengigigil', 'deman berdarah', 'makan obat'),
+(33, '0002237374139', 'Muhammad Arifin Hakim', '2023-06-23', '123/90', 185.4, 0, 0, 'O', 'a', 'a', 'a'),
+(34, '0002237374152', 'abc', '2023-07-14', '123/90', 178.8, 52, 153, 'AB', 'aaaaaaaaa', 'aaaaaa', 'aaaaaaaaaa'),
+(35, '0002237374152', 'abc', '2023-07-15', '', 0, 0, 0, '', 'sada', 'asdas', 'asdas'),
+(36, '0002237374151', 'aaaaa aaaaaaaa aaaaaa', '2023-07-15', '', 0, 0, 0, '', 'hgjg', 'ugi', 'tddkhff');
 
 -- --------------------------------------------------------
 
@@ -117,7 +121,10 @@ INSERT INTO `tbl_pasien` (`id`, `nomor`, `nama_pasien`, `tanggal_lahir`, `usia`,
 (18, '0002237374146', 'Deni Khaulany', '2023-06-25', 23, 'laki-laki', 'asdasd asd\r\nasdA\r\nasdfa\r\na', '089840112341'),
 (21, '0002237374147', 'Akmal Aan Faris', '1975-11-19', 43, 'laki-laki', 'asdasd asdasdasdac asdasd\r\nSAd', '085124512352'),
 (22, '0002237374148', 'Fajar Maulana S.KOM', '1986-07-01', 37, 'laki-laki', 'asdasdasdasda asdasd as asdasdasd', '015125124512'),
-(23, '0002237374149', 'Herdian', '2000-10-21', 54, 'laki-laki', 'qwfasf asdasdasd asdas asdas  asdasdasdadasdasd asda sda', '9135123526123');
+(23, '0002237374149', 'Herdian', '2000-10-21', 54, 'laki-laki', 'qwfasf asdasdasd asdas asdas  asdasdasdadasdasd asda sda', '9135123526123'),
+(24, '0002237374150', 'Watermelon boy', '2023-04-20', 43, 'laki-laki', '', ''),
+(31, '0002237374151', 'aaaaa aaaaaaaa aaaaaa', '2023-06-13', 12, 'laki-laki', 'a', '1234567890123'),
+(32, '0002237374152', 'abc', '0000-00-00', 12, 'laki-laki', '', '');
 
 --
 -- Indexes for dumped tables
@@ -155,13 +162,13 @@ ALTER TABLE `tbl_karyawan`
 -- AUTO_INCREMENT untuk tabel `tbl_medical_check`
 --
 ALTER TABLE `tbl_medical_check`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_pasien`
 --
 ALTER TABLE `tbl_pasien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
