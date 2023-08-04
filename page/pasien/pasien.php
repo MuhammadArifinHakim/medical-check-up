@@ -32,17 +32,18 @@
               <tr>
                 <td><?= $no++; ?></td>
                 <td><?= $data['nama_pasien']; ?></td>
-                <td><?= $data['tanggal_lahir'] !== '0000-00-00' ? date('d-m-Y', strtotime($data['tanggal_lahir'])) : '-'; ?></td>
+                <td style="text-align:center;"><?= $data['tanggal_lahir'] !== '0000-00-00' ? date('d-m-Y', strtotime($data['tanggal_lahir'])) : '-'; ?></td>
                 <td><?= $data['usia']; ?></td>
                 <td><?= $data['gender']; ?></td>
-                <td><?= $data['no_hp']; ?></td>
+                <td><?= $data['no_hp'] ? $data['no_hp'] : '-'; ?></td>
                 <td>
                   <?php
                   $alamat = $data['alamat'];
                   $truncatedAlamat = strlen($alamat) > 150 ? substr($alamat, 0, 130) . '...' : $alamat;
-                  echo nl2br($truncatedAlamat);
+                  echo nl2br($truncatedAlamat ? $truncatedAlamat : '-');
                   ?>
                 </td>
+
                 <td>
                   <a href="?page=DataPersonal&id=<?php echo $data['id']; ?>" class="btn btn-primary"><b>detail</b></a>
                 </td>
